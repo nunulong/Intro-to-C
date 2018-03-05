@@ -1,5 +1,5 @@
 #include <fizzbuzz.h>
-#include "../../utils/minunit.h" 
+#include "../../utils/minunit.h"
 
 char *test_fizzbuzz()
 {
