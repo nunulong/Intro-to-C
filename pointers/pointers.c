@@ -6,9 +6,11 @@
     address it's referring to) or the value at the address it's 
     pointing at.
 */
-void swap(int* a, int* b)
+void swap(int *a, int *b)
 {
-
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 /*
@@ -18,7 +20,13 @@ void swap(int* a, int* b)
 */
 int string_length(char *s)
 {
-
+    int i = 0;
+    while (*s != '\0')
+    {
+        i++;
+        s++;
+    }
+    return i;
 }
 
 /*
@@ -29,12 +37,18 @@ int string_length(char *s)
 */
 void string_copy(char *x, char *y)
 {
-
+    while (*y != '\0')
+    {
+        *x = *y;
+        x++;
+        y++;
+    }
+    *(x++) = '\0';
 }
 
 /* 
     Compares the character strings m and n and returns negative,
-    0, or positive if n is lexicographically less than, equal to,
+    0, or positive if m is lexicographically less than, equal to,
     or greater than n. To calculate lexicographic difference, find
     the difference between the first characters in m and n that differ.
     
@@ -46,7 +60,16 @@ void string_copy(char *x, char *y)
 */
 int string_compare(char *m, char *n)
 {
-
+    int i = 0;
+    while (m[i] == n[i])
+    {
+        if (m[i] == '\0' && n[i] == '\0')
+        {
+            break;
+        }
+        i++;
+    }
+    return m[i] - n[i];
 }
 
 #ifndef TESTING
