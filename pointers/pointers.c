@@ -43,7 +43,7 @@ void string_copy(char *x, char *y)
         x++;
         y++;
     }
-    *(x++) = '\0';
+    *x = '\0';
 }
 
 /* 
